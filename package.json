@@ -4,11 +4,10 @@
   "description": "Auto Darkwar with real Chrome and DevTools",
   "main": "scripts/auto.js",
   "scripts": {
-    "start": "node scripts/auto.js",
-    "auto": "node scripts/auto.js",
-    "connect": "node scripts/auto.js connect",
-    "setup": "node scripts/setup.js",
-    "test": "node scripts/test.js"
+    "start": "node auto.js",
+    "connect": "node auto.js connect ",
+    "setup": "node setup.js",
+    "test": "node test.js"
   },
   "dependencies": {
     "puppeteer": "^24.40.0",
