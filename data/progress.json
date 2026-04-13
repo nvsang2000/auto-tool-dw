@@ -1,0 +1,53 @@
+{
+  "accounts": {
+    "1184475469000182": {
+      "name": "yuene",
+      "totalRuns": 2,
+      "totalSuccess": 0,
+      "totalFailed": 0,
+      "lastRun": "2026-04-13T07:41:28.419Z",
+      "lastStatus": "running",
+      "lastError": null,
+      "completedAt": null,
+      "failedAt": null,
+      "lastConnectAt": null,
+      "days": {
+        "2026-04-13": {
+          "tasks": [],
+          "status": "running",
+          "startedAt": "2026-04-13T07:41:28.419Z",
+          "completedAt": null,
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        }
+      }
+    },
+    "1760134736000183": {
+      "name": "nam",
+      "totalRuns": 1,
+      "totalSuccess": 0,
+      "totalFailed": 1,
+      "lastRun": "2026-04-13T07:40:56.662Z",
+      "lastStatus": "failed",
+      "lastError": "ACCOUNT_NOT_SUPPORTED: System error - account not supported",
+      "completedAt": null,
+      "failedAt": "2026-04-13T07:41:24.860Z",
+      "lastConnectAt": null,
+      "days": {
+        "2026-04-13": {
+          "tasks": [],
+          "status": "failed",
+          "startedAt": "2026-04-13T07:40:56.662Z",
+          "completedAt": null,
+          "failedAt": "2026-04-13T07:41:24.860Z",
+          "error": "ACCOUNT_NOT_SUPPORTED: System error - account not supported",
+          "connectAt": null,
+          "notSupported": true,
+          "notSupportedAt": "2026-04-13T07:41:24.860Z"
+        }
+      },
+      "notSupported": true
+    }
+  }
+}

@@ -292,6 +292,34 @@ function markAccountFailed(uuid, accountName, errorMessage, tasks = []) {
   saveProgress(data);
 }
 
+function markAccountNotSupported(uuid, accountName) {
+  const data = ensureAccountProgress(uuid, accountName);
+  const today = todayStr();
+  const acc = data.accounts[uuid];
+
+  if (!acc.days[today]) {
+    acc.days[today] = {};
+  }
+
+  acc.lastStatus = "not_supported";
+  acc.lastError = "System error - account not supported";
+  acc.notSupported = true;
+
+  acc.days[today].status = "not_supported";
+  acc.days[today].error = "System error - account not supported";
+  acc.days[today].notSupported = true;
+  acc.days[today].notSupportedAt = nowIso();
+
+  saveProgress(data);
+  log(`⚠️ Account ${accountName} marked as NOT SUPPORTED`);
+}
+
+// Check if account is not supported (can be used to skip account)
+function isNotSupported(uuid) {
+  const data = loadProgress();
+  return data.accounts[uuid]?.notSupported === true;
+}
+
 function markAccountConnect(uuid, accountName) {
   const data = ensureAccountProgress(uuid, accountName);
   const today = todayStr();
@@ -703,6 +731,46 @@ async function closeAnyModal(page, account = {}) {
   return closed;
 }
 
+// Check if system error modal appears after login
+async function checkSystemErrorModal(page, account = {}) {
+  try {
+    const errorText = "System error, please try again later or contact support.";
+    
+    // Check in modal content
+    const hasError = await page.evaluate((searchText) => {
+      // Check visible modals
+      const modals = document.querySelectorAll('.modal-container, .modal, [role="dialog"]');
+      for (const modal of modals) {
+        const text = (modal.innerText || modal.textContent || "").trim();
+        if (text.includes(searchText)) {
+          return true;
+        }
+      }
+      
+      // Also check page body for error messages
+      const bodyText = document.body.innerText || document.body.textContent || "";
+      if (bodyText.includes(searchText)) {
+        return true;
+      }
+      
+      return false;
+    }, errorText);
+    
+    if (hasError) {
+      log("⚠️ System error modal detected - account not supported", `[${account.name || account.uuid}] `);
+      return true;
+    }
+    
+    return false;
+  } catch (error) {
+    writeErrorLog("checkSystemErrorModal failed", {
+      account: account.name || account.uuid || "",
+      error: error.message,
+    });
+    return false;
+  }
+}
+
 async function handleClaimResultModal(page, prefix = "", account = {}) {
   let confirmed = false;
 
@@ -908,6 +976,13 @@ async function doLogin(page, account, prefix) {
   await safeClickHandle(page, submitBtn, prefix, "submit login", account);
   await sleep(CONFIG.LOGIN_WAIT_AFTER_SUBMIT);
 
+  // Check for system error modal
+  const hasSystemError = await checkSystemErrorModal(page, account);
+  if (hasSystemError) {
+    markAccountNotSupported(account.uuid, account.name || uuid);
+    throw new Error("ACCOUNT_NOT_SUPPORTED: System error - account not supported");
+  }
+
   await closeAnyModal(page, account);
   await closePromoPopup(page, account);
 
@@ -1104,6 +1179,15 @@ async function runAccount(page, account, index) {
 
   log(`\n${"=".repeat(50)}`, prefix);
   log(`🚀 Starting account ${index + 1}`, prefix);
+
+  // Skip if account not supported
+  if (isNotSupported(uuid)) {
+    log(
+      `⏭️ Account marked as NOT SUPPORTED - skipping`,
+      prefix,
+    );
+    return { skipped: true, reason: "not_supported" };
+  }
 
   if (isDoneToday(uuid)) {
     const stats = getStats(uuid);
