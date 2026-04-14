@@ -2,52 +2,290 @@
   "accounts": {
     "1184475469000182": {
       "name": "yuene",
-      "totalRuns": 2,
-      "totalSuccess": 0,
+      "totalRuns": 1,
+      "totalSuccess": 1,
       "totalFailed": 0,
-      "lastRun": "2026-04-13T07:41:28.419Z",
-      "lastStatus": "running",
+      "lastRun": "2026-04-14T07:19:02.721Z",
+      "lastStatus": "success",
       "lastError": null,
-      "completedAt": null,
+      "completedAt": "2026-04-14T07:20:24.770Z",
       "failedAt": null,
       "lastConnectAt": null,
       "days": {
-        "2026-04-13": {
-          "tasks": [],
-          "status": "running",
-          "startedAt": "2026-04-13T07:41:28.419Z",
-          "completedAt": null,
+        "2026-04-14": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-14T07:19:02.721Z",
+          "completedAt": "2026-04-14T07:20:24.770Z",
           "failedAt": null,
           "error": null,
           "connectAt": null
         }
       }
     },
+    "1438207342000185": {
+      "name": "Hạnhbe",
+      "totalRuns": 2,
+      "totalSuccess": 1,
+      "totalFailed": 1,
+      "lastRun": "2026-04-14T07:20:45.974Z",
+      "lastStatus": "success",
+      "lastError": null,
+      "completedAt": "2026-04-14T07:21:51.526Z",
+      "failedAt": null,
+      "lastConnectAt": null,
+      "days": {
+        "2026-04-14": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-14T07:20:45.974Z",
+          "completedAt": "2026-04-14T07:21:51.526Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        }
+      }
+    },
+    "1007657272000182": {
+      "name": "Chung 192",
+      "totalRuns": 1,
+      "totalSuccess": 1,
+      "totalFailed": 2,
+      "lastRun": "2026-04-14T07:22:13.735Z",
+      "lastStatus": "success",
+      "lastError": null,
+      "completedAt": "2026-04-14T07:23:21.099Z",
+      "failedAt": null,
+      "lastConnectAt": null,
+      "days": {
+        "2026-04-14": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_claim"
+          ],
+          "status": "success",
+          "completedAt": "2026-04-14T07:23:21.099Z",
+          "failedAt": null,
+          "error": null,
+          "startedAt": "2026-04-14T07:22:13.735Z"
+        }
+      }
+    },
+    "1685111706000192": {
+      "name": "XCherryChubby",
+      "totalRuns": 1,
+      "totalSuccess": 1,
+      "totalFailed": 2,
+      "lastRun": "2026-04-14T07:23:24.803Z",
+      "lastStatus": "success",
+      "lastError": null,
+      "completedAt": "2026-04-14T07:24:32.220Z",
+      "failedAt": null,
+      "lastConnectAt": null,
+      "days": {
+        "2026-04-14": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_claim"
+          ],
+          "status": "success",
+          "completedAt": "2026-04-14T07:24:32.220Z",
+          "failedAt": null,
+          "error": null,
+          "startedAt": "2026-04-14T07:23:24.803Z"
+        }
+      }
+    },
+    "1749704491000182": {
+      "name": "Tiger",
+      "totalRuns": 1,
+      "totalSuccess": 1,
+      "totalFailed": 2,
+      "lastRun": "2026-04-14T07:24:35.878Z",
+      "lastStatus": "success",
+      "lastError": null,
+      "completedAt": "2026-04-14T07:25:43.229Z",
+      "failedAt": null,
+      "lastConnectAt": null,
+      "days": {
+        "2026-04-14": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_claim"
+          ],
+          "status": "success",
+          "completedAt": "2026-04-14T07:25:43.229Z",
+          "failedAt": null,
+          "error": null,
+          "startedAt": "2026-04-14T07:24:35.878Z"
+        }
+      }
+    },
     "1760134736000183": {
-      "name": "nam",
+      "name": "Nam",
       "totalRuns": 1,
       "totalSuccess": 0,
-      "totalFailed": 1,
-      "lastRun": "2026-04-13T07:40:56.662Z",
+      "totalFailed": 3,
+      "lastRun": "2026-04-14T07:25:46.875Z",
       "lastStatus": "failed",
       "lastError": "ACCOUNT_NOT_SUPPORTED: System error - account not supported",
       "completedAt": null,
-      "failedAt": "2026-04-13T07:41:24.860Z",
+      "failedAt": "2026-04-14T07:26:13.982Z",
       "lastConnectAt": null,
       "days": {
-        "2026-04-13": {
+        "2026-04-14": {
           "tasks": [],
           "status": "failed",
-          "startedAt": "2026-04-13T07:40:56.662Z",
           "completedAt": null,
-          "failedAt": "2026-04-13T07:41:24.860Z",
+          "failedAt": "2026-04-14T07:26:13.982Z",
           "error": "ACCOUNT_NOT_SUPPORTED: System error - account not supported",
-          "connectAt": null,
+          "startedAt": "2026-04-14T07:25:46.875Z",
           "notSupported": true,
-          "notSupportedAt": "2026-04-13T07:41:24.860Z"
+          "notSupportedAt": "2026-04-14T07:26:13.980Z"
         }
       },
       "notSupported": true
+    },
+    "1209958794000040": {
+      "name": "TranNghiaVN",
+      "totalRuns": 1,
+      "totalSuccess": 1,
+      "totalFailed": 2,
+      "lastRun": "2026-04-14T07:26:17.623Z",
+      "lastStatus": "success",
+      "lastError": null,
+      "completedAt": "2026-04-14T07:27:27.173Z",
+      "failedAt": null,
+      "lastConnectAt": null,
+      "days": {
+        "2026-04-14": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_claim"
+          ],
+          "status": "success",
+          "completedAt": "2026-04-14T07:27:27.173Z",
+          "failedAt": null,
+          "error": null,
+          "startedAt": "2026-04-14T07:26:17.623Z"
+        }
+      }
+    },
+    "1419573601000195": {
+      "name": "Jackie67",
+      "totalRuns": 1,
+      "totalSuccess": 1,
+      "totalFailed": 2,
+      "lastRun": "2026-04-14T07:27:30.852Z",
+      "lastStatus": "success",
+      "lastError": null,
+      "completedAt": "2026-04-14T07:28:37.933Z",
+      "failedAt": null,
+      "lastConnectAt": null,
+      "days": {
+        "2026-04-14": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_claim"
+          ],
+          "status": "success",
+          "completedAt": "2026-04-14T07:28:37.933Z",
+          "failedAt": null,
+          "error": null,
+          "startedAt": "2026-04-14T07:27:30.852Z"
+        }
+      }
+    },
+    "1000039021000561": {
+      "name": "Poetttt",
+      "totalRuns": 1,
+      "totalSuccess": 1,
+      "totalFailed": 2,
+      "lastRun": "2026-04-14T07:28:41.636Z",
+      "lastStatus": "success",
+      "lastError": null,
+      "completedAt": "2026-04-14T07:29:49.066Z",
+      "failedAt": null,
+      "lastConnectAt": null,
+      "days": {
+        "2026-04-14": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_claim"
+          ],
+          "status": "success",
+          "completedAt": "2026-04-14T07:29:49.066Z",
+          "failedAt": null,
+          "error": null,
+          "startedAt": "2026-04-14T07:28:41.636Z"
+        }
+      }
+    },
+    "1001884602000539": {
+      "name": "Đẹp Trai Hai Mái",
+      "totalRuns": 1,
+      "totalSuccess": 1,
+      "totalFailed": 2,
+      "lastRun": "2026-04-14T07:29:52.735Z",
+      "lastStatus": "success",
+      "lastError": null,
+      "completedAt": "2026-04-14T07:31:25.610Z",
+      "failedAt": null,
+      "lastConnectAt": null,
+      "days": {
+        "2026-04-14": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_claim"
+          ],
+          "status": "success",
+          "completedAt": "2026-04-14T07:31:25.610Z",
+          "failedAt": null,
+          "error": null,
+          "startedAt": "2026-04-14T07:29:52.735Z"
+        }
+      }
+    },
+    "1500639659000183": {
+      "name": "ミнυу彡",
+      "totalRuns": 1,
+      "totalSuccess": 1,
+      "totalFailed": 2,
+      "lastRun": "2026-04-14T07:31:29.303Z",
+      "lastStatus": "success",
+      "lastError": null,
+      "completedAt": "2026-04-14T07:32:36.711Z",
+      "failedAt": null,
+      "lastConnectAt": null,
+      "days": {
+        "2026-04-14": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_claim"
+          ],
+          "status": "success",
+          "completedAt": "2026-04-14T07:32:36.711Z",
+          "failedAt": null,
+          "error": null,
+          "startedAt": "2026-04-14T07:31:29.303Z"
+        }
+      }
     }
   }
 }

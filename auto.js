@@ -13,6 +13,7 @@ require("dotenv").config();
 
 function getLinuxChromePath() {
   const candidates = [
+    process.env.CHROME_PATH,
     process.env.BROWSER_EXECUTABLE_PATH,
     "/usr/bin/google-chrome",
     "/usr/bin/google-chrome-stable",
@@ -46,7 +47,7 @@ const CONFIG = {
   DEFAULT_MULTI_ACCOUNT: true,
   DEFAULT_MOBILE: true,
   KEEP_BROWSER_OPEN: false,
-  HEADLESS: false,
+  HEADLESS: process.env.HEADLESS === "true" || process.env.HEADLESS === "1" ? true : false,
   DEVTOOLS: true,
 
   BROWSER_EXECUTABLE_PATH: getLinuxChromePath(),
@@ -82,6 +83,27 @@ function todayStr() {
   return new Date().toISOString().split("T")[0];
 }
 
+
+function getTodayLogDir() {
+  const today = todayStr();
+  const logDir = path.join(CONFIG.LOGS_DIR, today);
+  ensureDirExists(logDir);
+  return logDir;
+}
+
+function getDailyCronLogFile() {
+  return path.join(getTodayLogDir(), 'cron.log');
+}
+
+function getDailyErrorLogFile() {
+  return path.join(getTodayLogDir(), 'error.log');
+}
+
+function writeDailyErrorLog(message, context = {}) {
+  const logFile = getDailyErrorLogFile();
+  appendFileLine(logFile, JSON.stringify({ time: nowIso(), message, ...context }));
+}
+
 function log(msg, prefix = "") {
   console.log(`[${new Date().toLocaleTimeString()}] ${prefix}${msg}`);
 }
@@ -103,6 +125,7 @@ function appendFileLine(filePath, line) {
 }
 
 function writeErrorLog(message, context = {}) {
+  writeDailyErrorLog(message, context);
   appendFileLine(
     CONFIG.ERROR_LOG_FILE,
     JSON.stringify({
@@ -1141,8 +1164,44 @@ const TASKS = {
     return true;
   },
 
-  task3_claim: async (page, account, prefix) => {
-    log("📋 Task 3: Claim boxTool rewards", prefix);
+  task3_pointCenter: async (page, account, prefix) => {
+    log("📋 Task 3: Visit /pointCenter", prefix);
+    await gotoSafe(
+      page,
+      `${CONFIG.BASE_URL}/#/pointCenter`,
+      prefix,
+      "goto /pointCenter",
+      account,
+    );
+    await sleep(3000);
+    await closeAnyModal(page, account);
+    await closePromoPopup(page, account);
+
+    const claimable = await page.$(".claimable");
+    if (claimable) {
+      await safeClickHandle(page, claimable, prefix, ".claimable", account);
+      log("   ✅ Clicked claimable", prefix);
+      await sleep(1000);
+      await handleClaimResultModal(page, prefix, account);
+      await closeAnyModal(page, account);
+    } else {
+      const noclaimable = await page.$(".noclaimable");
+      if (noclaimable) {
+        log("   ℹ️ Found noclaimable, skipping", prefix);
+      } else {
+        writeErrorLog("PointCenter task: no claimable or noclaimable found", {
+          account: account.name || account.uuid || "",
+        });
+        log("   ℹ️ No claimable/noclaimable found", prefix);
+      }
+    }
+
+    log("   ✅ Complete", prefix);
+    return true;
+  },
+
+  task4_claim: async (page, account, prefix) => {
+    log("📋 Task 4: Claim boxTool rewards", prefix);
 
     await gotoSafe(
       page,
@@ -1227,7 +1286,7 @@ async function runAccount(page, account, index) {
     await closeAnyModal(page, account);
     await claimImmediateRewards(page, prefix, account);
 
-    const taskList = ["task1_order", "task2_vip", "task3_claim"];
+    const taskList = ["task1_order", "task2_vip", "task3_pointCenter", "task4_claim"];
     log(`\n🎯 Running ${taskList.length} tasks...`, prefix);
 
     for (const taskName of taskList) {
@@ -1397,6 +1456,7 @@ async function runMulti() {
   let completed = 0;
   let failed = 0;
   let skipped = 0;
+  const failedAccounts = [];
 
   // Launch shared browser once
   let sharedBrowser = null;
@@ -1429,6 +1489,7 @@ async function runMulti() {
           error: e.message,
         });
         log(`❌ Failed: ${e.message}`, `[${acc.name || `Acc-${i + 1}`}] `);
+        if (e.message && e.message.includes("Page error")) { failedAccounts.push(acc); log(`⚠️ Will retry ${acc.name || acc.uuid} later`); }
       } finally {
         // Close page but keep browser open
         if (page) {
@@ -1442,7 +1503,14 @@ async function runMulti() {
         }
       }
     }
-
+    
+    // Retry failed accounts
+    if (failedAccounts.length > 0) {
+      const retryResult = await retryFailedAccounts(failedAccounts, sharedBrowser);
+      completed += retryResult.completed;
+      failed -= retryResult.completed;
+      log(`\n🔄 Retry complete: ${retryResult.completed} succeeded, ${retryResult.failed} still failed`);
+    }
   } finally {
     // Close shared browser at the end
     await closeSharedBrowser();
@@ -1491,3 +1559,43 @@ main().catch((e) => {
   log(`❌ Error: ${e.message}`);
   process.exit(1);
 });
+
+// Retry failed accounts function
+async function retryFailedAccounts(failedAccounts, sharedBrowser) {
+  if (failedAccounts.length === 0) return { completed: 0, failed: 0 };
+  
+  log(`\n🔄 Retrying ${failedAccounts.length} failed accounts...`);
+  let completed = 0;
+  let stillFailed = 0;
+  
+  for (let i = 0; i < failedAccounts.length; i++) {
+    const acc = failedAccounts[i];
+    let page = null;
+    
+    try {
+      page = await sharedBrowser.newPage();
+      log(`📄 Retry page created for ${acc.name || acc.uuid}`);
+      
+      const result = await runAccount(page, acc, i, true);
+      
+      if (result.success) {
+        completed++;
+        log(`✅ Retry successful for ${acc.name || acc.uuid}`);
+      } else {
+        stillFailed++;
+        log(`❌ Retry failed for ${acc.name || acc.uuid}`);
+      }
+    } catch (e) {
+      stillFailed++;
+      writeDailyErrorLog("Retry error", { error: e.message, account: acc.name || acc.uuid });
+      log(`❌ Retry exception: ${e.message}`);
+    } finally {
+      if (page) {
+        await page.close().catch(() => {});
+      }
+      await sleep(3000);
+    }
+  }
+  
+  return { completed, failed: stillFailed };
+}
