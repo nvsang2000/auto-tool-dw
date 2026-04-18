@@ -36,7 +36,7 @@ const CONFIG = {
   ROOT_DIR: __dirname,
   DATA_DIR: path.resolve(__dirname, "./data"),
   LOGS_DIR: path.resolve(__dirname, "./logs"),
-  CHROME_DATA_DIR: path.resolve(__dirname, "./chrome-data"),
+  CHROME_DATA_DIR: "/home/nvsang/server/chrome-data/shared",
   ACCOUNTS_FILE: path.resolve(__dirname, "./config/accounts.json"),
   PROGRESS_FILE: path.resolve(__dirname, "./data/progress.json"),
   ERROR_LOG_FILE: path.resolve(__dirname, "./logs/error.log"),
@@ -47,7 +47,10 @@ const CONFIG = {
   DEFAULT_MULTI_ACCOUNT: true,
   DEFAULT_MOBILE: true,
   KEEP_BROWSER_OPEN: false,
-  HEADLESS: process.env.HEADLESS === "true" || process.env.HEADLESS === "1" ? true : false,
+  HEADLESS:
+    process.env.HEADLESS === "true" || process.env.HEADLESS === "1"
+      ? true
+      : false,
   DEVTOOLS: true,
 
   BROWSER_EXECUTABLE_PATH: getLinuxChromePath(),
@@ -83,7 +86,6 @@ function todayStr() {
   return new Date().toISOString().split("T")[0];
 }
 
-
 function getTodayLogDir() {
   const today = todayStr();
   const logDir = path.join(CONFIG.LOGS_DIR, today);
@@ -92,16 +94,19 @@ function getTodayLogDir() {
 }
 
 function getDailyCronLogFile() {
-  return path.join(getTodayLogDir(), 'cron.log');
+  return path.join(getTodayLogDir(), "cron.log");
 }
 
 function getDailyErrorLogFile() {
-  return path.join(getTodayLogDir(), 'error.log');
+  return path.join(getTodayLogDir(), "error.log");
 }
 
 function writeDailyErrorLog(message, context = {}) {
   const logFile = getDailyErrorLogFile();
-  appendFileLine(logFile, JSON.stringify({ time: nowIso(), message, ...context }));
+  appendFileLine(
+    logFile,
+    JSON.stringify({ time: nowIso(), message, ...context }),
+  );
 }
 
 function log(msg, prefix = "") {
@@ -462,7 +467,7 @@ async function createAccountPage() {
 
   // Set user agent
   await page.setUserAgent(
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
   );
 
   return page;
@@ -757,33 +762,40 @@ async function closeAnyModal(page, account = {}) {
 // Check if system error modal appears after login
 async function checkSystemErrorModal(page, account = {}) {
   try {
-    const errorText = "System error, please try again later or contact support.";
-    
+    const errorText =
+      "System error, please try again later or contact support.";
+
     // Check in modal content
     const hasError = await page.evaluate((searchText) => {
       // Check visible modals
-      const modals = document.querySelectorAll('.modal-container, .modal, [role="dialog"]');
+      const modals = document.querySelectorAll(
+        '.modal-container, .modal, [role="dialog"]',
+      );
       for (const modal of modals) {
         const text = (modal.innerText || modal.textContent || "").trim();
         if (text.includes(searchText)) {
           return true;
         }
       }
-      
+
       // Also check page body for error messages
-      const bodyText = document.body.innerText || document.body.textContent || "";
+      const bodyText =
+        document.body.innerText || document.body.textContent || "";
       if (bodyText.includes(searchText)) {
         return true;
       }
-      
+
       return false;
     }, errorText);
-    
+
     if (hasError) {
-      log("⚠️ System error modal detected - account not supported", `[${account.name || account.uuid}] `);
+      log(
+        "⚠️ System error modal detected - account not supported",
+        `[${account.name || account.uuid}] `,
+      );
       return true;
     }
-    
+
     return false;
   } catch (error) {
     writeErrorLog("checkSystemErrorModal failed", {
@@ -1003,7 +1015,9 @@ async function doLogin(page, account, prefix) {
   const hasSystemError = await checkSystemErrorModal(page, account);
   if (hasSystemError) {
     markAccountNotSupported(account.uuid, account.name || uuid);
-    throw new Error("ACCOUNT_NOT_SUPPORTED: System error - account not supported");
+    throw new Error(
+      "ACCOUNT_NOT_SUPPORTED: System error - account not supported",
+    );
   }
 
   await closeAnyModal(page, account);
@@ -1241,10 +1255,7 @@ async function runAccount(page, account, index) {
 
   // Skip if account not supported
   if (isNotSupported(uuid)) {
-    log(
-      `⏭️ Account marked as NOT SUPPORTED - skipping`,
-      prefix,
-    );
+    log(`⏭️ Account marked as NOT SUPPORTED - skipping`, prefix);
     return { skipped: true, reason: "not_supported" };
   }
 
@@ -1286,7 +1297,12 @@ async function runAccount(page, account, index) {
     await closeAnyModal(page, account);
     await claimImmediateRewards(page, prefix, account);
 
-    const taskList = ["task1_order", "task2_vip", "task3_pointCenter", "task4_claim"];
+    const taskList = [
+      "task1_order",
+      "task2_vip",
+      "task3_pointCenter",
+      "task4_claim",
+    ];
     log(`\n🎯 Running ${taskList.length} tasks...`, prefix);
 
     for (const taskName of taskList) {
@@ -1480,7 +1496,6 @@ async function runMulti() {
         if (result.skipped) skipped++;
         else if (result.success) completed++;
         else failed++;
-
       } catch (e) {
         failed++;
         markAccountFailed(acc.uuid, acc.name || `Acc-${i + 1}`, e.message, []);
@@ -1489,7 +1504,10 @@ async function runMulti() {
           error: e.message,
         });
         log(`❌ Failed: ${e.message}`, `[${acc.name || `Acc-${i + 1}`}] `);
-        if (e.message && e.message.includes("Page error")) { failedAccounts.push(acc); log(`⚠️ Will retry ${acc.name || acc.uuid} later`); }
+        if (e.message && e.message.includes("Page error")) {
+          failedAccounts.push(acc);
+          log(`⚠️ Will retry ${acc.name || acc.uuid} later`);
+        }
       } finally {
         // Close page but keep browser open
         if (page) {
@@ -1503,13 +1521,18 @@ async function runMulti() {
         }
       }
     }
-    
+
     // Retry failed accounts
     if (failedAccounts.length > 0) {
-      const retryResult = await retryFailedAccounts(failedAccounts, sharedBrowser);
+      const retryResult = await retryFailedAccounts(
+        failedAccounts,
+        sharedBrowser,
+      );
       completed += retryResult.completed;
       failed -= retryResult.completed;
-      log(`\n🔄 Retry complete: ${retryResult.completed} succeeded, ${retryResult.failed} still failed`);
+      log(
+        `\n🔄 Retry complete: ${retryResult.completed} succeeded, ${retryResult.failed} still failed`,
+      );
     }
   } finally {
     // Close shared browser at the end
@@ -1563,21 +1586,21 @@ main().catch((e) => {
 // Retry failed accounts function
 async function retryFailedAccounts(failedAccounts, sharedBrowser) {
   if (failedAccounts.length === 0) return { completed: 0, failed: 0 };
-  
+
   log(`\n🔄 Retrying ${failedAccounts.length} failed accounts...`);
   let completed = 0;
   let stillFailed = 0;
-  
+
   for (let i = 0; i < failedAccounts.length; i++) {
     const acc = failedAccounts[i];
     let page = null;
-    
+
     try {
       page = await sharedBrowser.newPage();
       log(`📄 Retry page created for ${acc.name || acc.uuid}`);
-      
+
       const result = await runAccount(page, acc, i, true);
-      
+
       if (result.success) {
         completed++;
         log(`✅ Retry successful for ${acc.name || acc.uuid}`);
@@ -1587,7 +1610,10 @@ async function retryFailedAccounts(failedAccounts, sharedBrowser) {
       }
     } catch (e) {
       stillFailed++;
-      writeDailyErrorLog("Retry error", { error: e.message, account: acc.name || acc.uuid });
+      writeDailyErrorLog("Retry error", {
+        error: e.message,
+        account: acc.name || acc.uuid,
+      });
       log(`❌ Retry exception: ${e.message}`);
     } finally {
       if (page) {
@@ -1596,6 +1622,6 @@ async function retryFailedAccounts(failedAccounts, sharedBrowser) {
       await sleep(3000);
     }
   }
-  
+
   return { completed, failed: stillFailed };
 }

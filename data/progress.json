@@ -2,14 +2,14 @@
   "accounts": {
     "1184475469000182": {
       "name": "yuene",
-      "totalRuns": 1,
-      "totalSuccess": 1,
-      "totalFailed": 0,
-      "lastRun": "2026-04-14T07:19:02.721Z",
-      "lastStatus": "success",
-      "lastError": null,
-      "completedAt": "2026-04-14T07:20:24.770Z",
-      "failedAt": null,
+      "totalRuns": 6,
+      "totalSuccess": 4,
+      "totalFailed": 2,
+      "lastRun": "2026-04-18T02:44:00.320Z",
+      "lastStatus": "failed",
+      "lastError": "[safeClick:.userIcon] Selector: .userIcon | [waitForSelector:.userIcon] Selector: .userIcon | Waiting for selector `.userIcon` failed",
+      "completedAt": "2026-04-17T02:34:02.769Z",
+      "failedAt": "2026-04-18T02:44:17.341Z",
       "lastConnectAt": null,
       "days": {
         "2026-04-14": {
@@ -24,19 +24,70 @@
           "failedAt": null,
           "error": null,
           "connectAt": null
+        },
+        "2026-04-15": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-15T02:31:59.032Z",
+          "completedAt": "2026-04-15T02:33:58.874Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-16": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-16T02:38:48.846Z",
+          "completedAt": "2026-04-16T02:40:48.430Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-17": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-17T02:32:03.632Z",
+          "completedAt": "2026-04-17T02:34:02.769Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-18": {
+          "tasks": [],
+          "status": "failed",
+          "startedAt": "2026-04-18T02:44:00.320Z",
+          "completedAt": null,
+          "failedAt": "2026-04-18T02:44:17.341Z",
+          "error": "[safeClick:.userIcon] Selector: .userIcon | [waitForSelector:.userIcon] Selector: .userIcon | Waiting for selector `.userIcon` failed",
+          "connectAt": null
         }
       }
     },
     "1438207342000185": {
       "name": "Hạnhbe",
-      "totalRuns": 2,
-      "totalSuccess": 1,
-      "totalFailed": 1,
-      "lastRun": "2026-04-14T07:20:45.974Z",
-      "lastStatus": "success",
-      "lastError": null,
-      "completedAt": "2026-04-14T07:21:51.526Z",
-      "failedAt": null,
+      "totalRuns": 8,
+      "totalSuccess": 4,
+      "totalFailed": 4,
+      "lastRun": "2026-04-18T02:44:20.992Z",
+      "lastStatus": "failed",
+      "lastError": "[safeClick:.userIcon] Selector: .userIcon | [waitForSelector:.userIcon] Selector: .userIcon | Waiting for selector `.userIcon` failed",
+      "completedAt": "2026-04-17T02:39:39.250Z",
+      "failedAt": "2026-04-18T02:44:37.764Z",
       "lastConnectAt": null,
       "days": {
         "2026-04-14": {
@@ -51,19 +102,70 @@
           "failedAt": null,
           "error": null,
           "connectAt": null
+        },
+        "2026-04-15": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-15T03:10:13.600Z",
+          "completedAt": "2026-04-15T03:15:45.856Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-16": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-16T02:40:52.099Z",
+          "completedAt": "2026-04-16T02:46:23.588Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-17": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-17T02:34:06.454Z",
+          "completedAt": "2026-04-17T02:39:39.250Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-18": {
+          "tasks": [],
+          "status": "failed",
+          "startedAt": "2026-04-18T02:44:20.992Z",
+          "completedAt": null,
+          "failedAt": "2026-04-18T02:44:37.764Z",
+          "error": "[safeClick:.userIcon] Selector: .userIcon | [waitForSelector:.userIcon] Selector: .userIcon | Waiting for selector `.userIcon` failed",
+          "connectAt": null
         }
       }
     },
     "1007657272000182": {
       "name": "Chung 192",
-      "totalRuns": 1,
-      "totalSuccess": 1,
-      "totalFailed": 2,
-      "lastRun": "2026-04-14T07:22:13.735Z",
-      "lastStatus": "success",
-      "lastError": null,
-      "completedAt": "2026-04-14T07:23:21.099Z",
-      "failedAt": null,
+      "totalRuns": 6,
+      "totalSuccess": 4,
+      "totalFailed": 4,
+      "lastRun": "2026-04-18T02:44:41.383Z",
+      "lastStatus": "failed",
+      "lastError": "[reload after clear] Selector: https://pay.darkwar-survival.com/#/order | net::ERR_NETWORK_CHANGED at https://pay.darkwar-survival.com/#/order",
+      "completedAt": "2026-04-17T02:41:20.824Z",
+      "failedAt": "2026-04-18T02:44:49.172Z",
       "lastConnectAt": null,
       "days": {
         "2026-04-14": {
@@ -77,19 +179,70 @@
           "failedAt": null,
           "error": null,
           "startedAt": "2026-04-14T07:22:13.735Z"
+        },
+        "2026-04-15": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-15T02:34:32.442Z",
+          "completedAt": "2026-04-15T02:36:31.251Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-16": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-16T02:46:27.244Z",
+          "completedAt": "2026-04-16T02:48:26.184Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-17": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-17T02:39:42.963Z",
+          "completedAt": "2026-04-17T02:41:20.824Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-18": {
+          "tasks": [],
+          "status": "failed",
+          "startedAt": "2026-04-18T02:44:41.383Z",
+          "completedAt": null,
+          "failedAt": "2026-04-18T02:44:49.172Z",
+          "error": "[reload after clear] Selector: https://pay.darkwar-survival.com/#/order | net::ERR_NETWORK_CHANGED at https://pay.darkwar-survival.com/#/order",
+          "connectAt": null
         }
       }
     },
     "1685111706000192": {
       "name": "XCherryChubby",
-      "totalRuns": 1,
-      "totalSuccess": 1,
-      "totalFailed": 2,
-      "lastRun": "2026-04-14T07:23:24.803Z",
-      "lastStatus": "success",
-      "lastError": null,
-      "completedAt": "2026-04-14T07:24:32.220Z",
-      "failedAt": null,
+      "totalRuns": 6,
+      "totalSuccess": 4,
+      "totalFailed": 4,
+      "lastRun": "2026-04-18T02:44:52.810Z",
+      "lastStatus": "failed",
+      "lastError": "[safeClick:.userIcon] Selector: .userIcon | [waitForSelector:.userIcon] Selector: .userIcon | Waiting for selector `.userIcon` failed",
+      "completedAt": "2026-04-17T02:43:22.236Z",
+      "failedAt": "2026-04-18T02:45:09.931Z",
       "lastConnectAt": null,
       "days": {
         "2026-04-14": {
@@ -103,19 +256,70 @@
           "failedAt": null,
           "error": null,
           "startedAt": "2026-04-14T07:23:24.803Z"
+        },
+        "2026-04-15": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-15T02:36:34.941Z",
+          "completedAt": "2026-04-15T02:38:34.210Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-16": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-16T02:48:29.841Z",
+          "completedAt": "2026-04-16T02:49:53.330Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-17": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-17T02:41:24.500Z",
+          "completedAt": "2026-04-17T02:43:22.236Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-18": {
+          "tasks": [],
+          "status": "failed",
+          "startedAt": "2026-04-18T02:44:52.810Z",
+          "completedAt": null,
+          "failedAt": "2026-04-18T02:45:09.931Z",
+          "error": "[safeClick:.userIcon] Selector: .userIcon | [waitForSelector:.userIcon] Selector: .userIcon | Waiting for selector `.userIcon` failed",
+          "connectAt": null
         }
       }
     },
     "1749704491000182": {
       "name": "Tiger",
-      "totalRuns": 1,
-      "totalSuccess": 1,
-      "totalFailed": 2,
-      "lastRun": "2026-04-14T07:24:35.878Z",
-      "lastStatus": "success",
-      "lastError": null,
-      "completedAt": "2026-04-14T07:25:43.229Z",
-      "failedAt": null,
+      "totalRuns": 6,
+      "totalSuccess": 4,
+      "totalFailed": 4,
+      "lastRun": "2026-04-18T02:45:13.550Z",
+      "lastStatus": "failed",
+      "lastError": "[safeClick:.userIcon] Selector: .userIcon | [waitForSelector:.userIcon] Selector: .userIcon | Waiting for selector `.userIcon` failed",
+      "completedAt": "2026-04-17T02:45:23.437Z",
+      "failedAt": "2026-04-18T02:45:30.244Z",
       "lastConnectAt": null,
       "days": {
         "2026-04-14": {
@@ -129,6 +333,57 @@
           "failedAt": null,
           "error": null,
           "startedAt": "2026-04-14T07:24:35.878Z"
+        },
+        "2026-04-15": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-15T02:38:37.839Z",
+          "completedAt": "2026-04-15T02:40:37.617Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-16": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-16T02:49:57.030Z",
+          "completedAt": "2026-04-16T02:51:22.370Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-17": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-17T02:43:25.870Z",
+          "completedAt": "2026-04-17T02:45:23.437Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-18": {
+          "tasks": [],
+          "status": "failed",
+          "startedAt": "2026-04-18T02:45:13.550Z",
+          "completedAt": null,
+          "failedAt": "2026-04-18T02:45:30.244Z",
+          "error": "[safeClick:.userIcon] Selector: .userIcon | [waitForSelector:.userIcon] Selector: .userIcon | Waiting for selector `.userIcon` failed",
+          "connectAt": null
         }
       }
     },
@@ -159,14 +414,14 @@
     },
     "1209958794000040": {
       "name": "TranNghiaVN",
-      "totalRuns": 1,
-      "totalSuccess": 1,
-      "totalFailed": 2,
-      "lastRun": "2026-04-14T07:26:17.623Z",
-      "lastStatus": "success",
-      "lastError": null,
-      "completedAt": "2026-04-14T07:27:27.173Z",
-      "failedAt": null,
+      "totalRuns": 8,
+      "totalSuccess": 4,
+      "totalFailed": 6,
+      "lastRun": "2026-04-18T02:45:54.344Z",
+      "lastStatus": "failed",
+      "lastError": "[safeClick:.userIcon] Selector: .userIcon | [waitForSelector:.userIcon] Selector: .userIcon | Waiting for selector `.userIcon` failed",
+      "completedAt": "2026-04-17T03:01:29.054Z",
+      "failedAt": "2026-04-18T02:46:12.401Z",
       "lastConnectAt": null,
       "days": {
         "2026-04-14": {
@@ -180,19 +435,70 @@
           "failedAt": null,
           "error": null,
           "startedAt": "2026-04-14T07:26:17.623Z"
+        },
+        "2026-04-15": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-15T03:16:03.898Z",
+          "completedAt": "2026-04-15T03:18:03.114Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-16": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-16T02:52:54.713Z",
+          "completedAt": "2026-04-16T02:54:54.015Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-17": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-17T02:59:25.009Z",
+          "completedAt": "2026-04-17T03:01:29.054Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-18": {
+          "tasks": [],
+          "status": "failed",
+          "startedAt": "2026-04-18T02:45:54.344Z",
+          "completedAt": null,
+          "failedAt": "2026-04-18T02:46:12.401Z",
+          "error": "[safeClick:.userIcon] Selector: .userIcon | [waitForSelector:.userIcon] Selector: .userIcon | Waiting for selector `.userIcon` failed",
+          "connectAt": null
         }
       }
     },
     "1419573601000195": {
       "name": "Jackie67",
-      "totalRuns": 1,
-      "totalSuccess": 1,
-      "totalFailed": 2,
-      "lastRun": "2026-04-14T07:27:30.852Z",
-      "lastStatus": "success",
-      "lastError": null,
-      "completedAt": "2026-04-14T07:28:37.933Z",
-      "failedAt": null,
+      "totalRuns": 6,
+      "totalSuccess": 4,
+      "totalFailed": 4,
+      "lastRun": "2026-04-18T02:46:16.032Z",
+      "lastStatus": "failed",
+      "lastError": "[safeClick:.userIcon] Selector: .userIcon | [waitForSelector:.userIcon] Selector: .userIcon | Waiting for selector `.userIcon` failed",
+      "completedAt": "2026-04-17T02:52:43.331Z",
+      "failedAt": "2026-04-18T02:46:32.882Z",
       "lastConnectAt": null,
       "days": {
         "2026-04-14": {
@@ -206,19 +512,70 @@
           "failedAt": null,
           "error": null,
           "startedAt": "2026-04-14T07:27:30.852Z"
+        },
+        "2026-04-15": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-15T02:42:44.479Z",
+          "completedAt": "2026-04-15T02:44:43.823Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-16": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-16T02:54:57.717Z",
+          "completedAt": "2026-04-16T02:56:56.993Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-17": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-17T02:50:53.925Z",
+          "completedAt": "2026-04-17T02:52:43.331Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-18": {
+          "tasks": [],
+          "status": "failed",
+          "startedAt": "2026-04-18T02:46:16.032Z",
+          "completedAt": null,
+          "failedAt": "2026-04-18T02:46:32.882Z",
+          "error": "[safeClick:.userIcon] Selector: .userIcon | [waitForSelector:.userIcon] Selector: .userIcon | Waiting for selector `.userIcon` failed",
+          "connectAt": null
         }
       }
     },
     "1000039021000561": {
       "name": "Poetttt",
-      "totalRuns": 1,
-      "totalSuccess": 1,
-      "totalFailed": 2,
-      "lastRun": "2026-04-14T07:28:41.636Z",
-      "lastStatus": "success",
-      "lastError": null,
-      "completedAt": "2026-04-14T07:29:49.066Z",
-      "failedAt": null,
+      "totalRuns": 5,
+      "totalSuccess": 4,
+      "totalFailed": 4,
+      "lastRun": "2026-04-18T02:46:36.498Z",
+      "lastStatus": "failed",
+      "lastError": "[safeClick:.userIcon] Selector: .userIcon | [waitForSelector:.userIcon] Selector: .userIcon | Waiting for selector `.userIcon` failed",
+      "completedAt": "2026-04-17T02:54:46.371Z",
+      "failedAt": "2026-04-18T02:46:53.207Z",
       "lastConnectAt": null,
       "days": {
         "2026-04-14": {
@@ -232,19 +589,69 @@
           "failedAt": null,
           "error": null,
           "startedAt": "2026-04-14T07:28:41.636Z"
+        },
+        "2026-04-15": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-15T02:44:47.476Z",
+          "completedAt": "2026-04-15T02:46:45.379Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-16": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-16T02:57:00.625Z",
+          "completedAt": "2026-04-16T02:58:57.662Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-17": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-17T02:52:46.981Z",
+          "completedAt": "2026-04-17T02:54:46.371Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-18": {
+          "tasks": [],
+          "status": "failed",
+          "completedAt": null,
+          "failedAt": "2026-04-18T02:46:53.207Z",
+          "error": "[safeClick:.userIcon] Selector: .userIcon | [waitForSelector:.userIcon] Selector: .userIcon | Waiting for selector `.userIcon` failed",
+          "startedAt": "2026-04-18T02:46:36.498Z"
         }
       }
     },
     "1001884602000539": {
       "name": "Đẹp Trai Hai Mái",
-      "totalRuns": 1,
-      "totalSuccess": 1,
-      "totalFailed": 2,
-      "lastRun": "2026-04-14T07:29:52.735Z",
-      "lastStatus": "success",
-      "lastError": null,
-      "completedAt": "2026-04-14T07:31:25.610Z",
-      "failedAt": null,
+      "totalRuns": 5,
+      "totalSuccess": 4,
+      "totalFailed": 4,
+      "lastRun": "2026-04-18T02:46:56.835Z",
+      "lastStatus": "failed",
+      "lastError": "[reload after clear] Selector: https://pay.darkwar-survival.com/#/order | net::ERR_NETWORK_CHANGED at https://pay.darkwar-survival.com/#/order",
+      "completedAt": "2026-04-17T02:56:47.958Z",
+      "failedAt": "2026-04-18T02:47:04.604Z",
       "lastConnectAt": null,
       "days": {
         "2026-04-14": {
@@ -258,19 +665,69 @@
           "failedAt": null,
           "error": null,
           "startedAt": "2026-04-14T07:29:52.735Z"
+        },
+        "2026-04-15": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-15T02:46:49.045Z",
+          "completedAt": "2026-04-15T02:48:48.618Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-16": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-16T02:59:01.332Z",
+          "completedAt": "2026-04-16T03:01:00.773Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-17": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-17T02:54:50.014Z",
+          "completedAt": "2026-04-17T02:56:47.958Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-18": {
+          "tasks": [],
+          "status": "failed",
+          "completedAt": null,
+          "failedAt": "2026-04-18T02:47:04.604Z",
+          "error": "[reload after clear] Selector: https://pay.darkwar-survival.com/#/order | net::ERR_NETWORK_CHANGED at https://pay.darkwar-survival.com/#/order",
+          "startedAt": "2026-04-18T02:46:56.835Z"
         }
       }
     },
     "1500639659000183": {
       "name": "ミнυу彡",
-      "totalRuns": 1,
-      "totalSuccess": 1,
-      "totalFailed": 2,
-      "lastRun": "2026-04-14T07:31:29.303Z",
-      "lastStatus": "success",
-      "lastError": null,
-      "completedAt": "2026-04-14T07:32:36.711Z",
-      "failedAt": null,
+      "totalRuns": 5,
+      "totalSuccess": 4,
+      "totalFailed": 4,
+      "lastRun": "2026-04-18T02:47:08.214Z",
+      "lastStatus": "failed",
+      "lastError": "[safeClick:.userIcon] Selector: .userIcon | [waitForSelector:.userIcon] Selector: .userIcon | Waiting for selector `.userIcon` failed",
+      "completedAt": "2026-04-17T02:58:51.048Z",
+      "failedAt": "2026-04-18T02:47:25.207Z",
       "lastConnectAt": null,
       "days": {
         "2026-04-14": {
@@ -284,6 +741,121 @@
           "failedAt": null,
           "error": null,
           "startedAt": "2026-04-14T07:31:29.303Z"
+        },
+        "2026-04-15": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-15T02:48:52.283Z",
+          "completedAt": "2026-04-15T02:50:51.550Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-16": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-16T03:01:04.451Z",
+          "completedAt": "2026-04-16T03:06:36.270Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-17": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-17T02:56:51.656Z",
+          "completedAt": "2026-04-17T02:58:51.048Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-18": {
+          "tasks": [],
+          "status": "failed",
+          "completedAt": null,
+          "failedAt": "2026-04-18T02:47:25.207Z",
+          "error": "[safeClick:.userIcon] Selector: .userIcon | [waitForSelector:.userIcon] Selector: .userIcon | Waiting for selector `.userIcon` failed",
+          "startedAt": "2026-04-18T02:47:08.214Z"
+        }
+      }
+    },
+    "1616200725000489": {
+      "name": "Nam phạm",
+      "totalRuns": 5,
+      "totalSuccess": 3,
+      "totalFailed": 2,
+      "lastRun": "2026-04-18T02:45:33.862Z",
+      "lastStatus": "failed",
+      "lastError": "[safeClick:.userIcon] Selector: .userIcon | [waitForSelector:.userIcon] Selector: .userIcon | Waiting for selector `.userIcon` failed",
+      "completedAt": "2026-04-17T02:47:26.130Z",
+      "failedAt": "2026-04-18T02:45:50.705Z",
+      "lastConnectAt": null,
+      "days": {
+        "2026-04-15": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-15T02:40:41.316Z",
+          "completedAt": "2026-04-15T02:42:36.830Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-16": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-16T02:51:26.026Z",
+          "completedAt": "2026-04-16T02:52:51.065Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-17": {
+          "tasks": [
+            "task1_order",
+            "task2_vip",
+            "task3_pointCenter",
+            "task4_claim"
+          ],
+          "status": "success",
+          "startedAt": "2026-04-17T02:45:27.060Z",
+          "completedAt": "2026-04-17T02:47:26.130Z",
+          "failedAt": null,
+          "error": null,
+          "connectAt": null
+        },
+        "2026-04-18": {
+          "tasks": [],
+          "status": "failed",
+          "startedAt": "2026-04-18T02:45:33.862Z",
+          "completedAt": null,
+          "failedAt": "2026-04-18T02:45:50.705Z",
+          "error": "[safeClick:.userIcon] Selector: .userIcon | [waitForSelector:.userIcon] Selector: .userIcon | Waiting for selector `.userIcon` failed",
+          "connectAt": null
         }
       }
     }
