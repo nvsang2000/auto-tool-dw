@@ -36,7 +36,7 @@ const CONFIG = {
   ROOT_DIR: __dirname,
   DATA_DIR: path.resolve(__dirname, "./data"),
   LOGS_DIR: path.resolve(__dirname, "./logs"),
-  CHROME_DATA_DIR: "/home/nvsang/server/chrome-data/shared",
+  CHROME_DATA_DIR: path.resolve(__dirname, "./chrome-data"),
   ACCOUNTS_FILE: path.resolve(__dirname, "./config/accounts.json"),
   PROGRESS_FILE: path.resolve(__dirname, "./data/progress.json"),
   ERROR_LOG_FILE: path.resolve(__dirname, "./logs/error.log"),

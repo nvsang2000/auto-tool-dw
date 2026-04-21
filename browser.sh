@@ -8,4 +8,7 @@ export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 export XDG_RUNTIME_DIR=/run/user/1000
 
 cd /home/nvsang/server/auto-tool
-npm start
+node open-browser.js
+
+
+#chmod +x browser.sh
