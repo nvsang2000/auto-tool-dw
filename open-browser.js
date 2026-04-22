@@ -28,7 +28,7 @@ function sleep(ms) {
   try {
     console.log("🚀 Initializing browser...");
 
-    const sharedProfileDir = path.join(__dirname, "chrome-data/shared");
+    const sharedProfileDir = "/home/nvsang/server/chrome-data/shared";
 
     const browser = await puppeteer.launch({
       headless: false, // bắt buộc

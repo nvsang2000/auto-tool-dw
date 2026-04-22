@@ -1,0 +1,40 @@
+{
+  "savedAt": "2026-04-22T03:05:22.634Z",
+  "accountName": "yuene",
+  "uuid": "1184475469000182",
+  "origin": "https://pay.darkwar-survival.com",
+  "cookies": [
+    {
+      "name": "_ga",
+      "value": "GA1.1.626246589.1776827107",
+      "domain": ".darkwar-survival.com",
+      "path": "/",
+      "expires": 1811387122.132559,
+      "size": 29,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sameParty": false
+    },
+    {
+      "name": "_ga_DTF7M3CTZ7",
+      "value": "GS2.1.s1776827106$o1$g1$t1776827122$j44$l0$h0",
+      "domain": ".darkwar-survival.com",
+      "path": "/",
+      "expires": 1811387122.242589,
+      "size": 59,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sameParty": false
+    }
+  ],
+  "localStorage": {
+    "user": "{\"curUser\":{},\"name\":\"\",\"headimg\":\"\",\"uid\":\"\",\"sid\":\"\",\"goods\":[{\"amount\":9.99,\"pay_brick_num\":1000,\"currency_symbol\":\"US$\",\"free_brick_num\":50,\"goods_id\":\"goods_1\",\"currency\":\"USD\",\"status\":1,\"limit\":1000},{\"amount\":19.99,\"pay_brick_num\":2000,\"currency_symbol\":\"US$\",\"free_brick_num\":100,\"goods_id\":\"goods_2\",\"currency\":\"USD\",\"status\":1,\"limit\":500},{\"amount\":24.99,\"pay_brick_num\":2500,\"currency_symbol\":\"US$\",\"free_brick_num\":125,\"goods_id\":\"goods_3\",\"currency\":\"USD\",\"status\":1,\"limit\":400},{\"amount\":49.99,\"pay_brick_num\":5000,\"currency_symbol\":\"US$\",\"free_brick_num\":250,\"goods_id\":\"goods_4\",\"currency\":\"USD\",\"status\":1,\"limit\":200},{\"amount\":99.99,\"pay_brick_num\":10000,\"currency_symbol\":\"US$\",\"free_brick_num\":500,\"goods_id\":\"goods_5\",\"currency\":\"USD\",\"status\":1,\"limit\":100},{\"amount\":499.9,\"pay_brick_num\":50000,\"currency_symbol\":\"US$\",\"free_brick_num\":2500,\"goods_id\":\"goods_6\",\"currency\":\"USD\",\"status\":1,\"limit\":20},{\"amount\":999.9,\"pay_brick_num\":100000,\"currency_symbol\":\"US$\",\"free_brick_num\":5000,\"goods_id\":\"goods_7\",\"currency\":\"USD\",\"status\":1,\"limit\":10}],\"goods_usd\":[],\"doubleGoodsList\":{\"goods_1\":210,\"goods_2\":210},\"country\":\"\",\"defCurrency\":\"\",\"paymentList\":[]}"
+  },
+  "sessionStorage": {}
+}
