@@ -1072,8 +1072,11 @@ async function claimAllButtons(
               style.opacity !== "0" &&
               rect.width > 0 &&
               rect.height > 0,
+            className: el.className,
           };
         });
+
+        log(`   🔍 Button #${i + 1}: "${info.text}" | visible=${info.visible} | disabled=${info.disabled} | class="${info.className}"`, prefix);
 
         if (!info.visible) continue;
 
@@ -1121,6 +1124,33 @@ async function claimImmediateRewards(page, prefix, account) {
   const claimed = await claimAllButtons(page, prefix, account);
   if (claimed > 0) {
     log(`✅ Total immediate claimed: ${claimed}`, prefix);
+  }
+
+  // Also specifically check for "Check In" button
+  await sleep(500);
+  log("🎁 Checking Check In button...", prefix);
+  const checkInBtn = await page.$('.btn.can, [class*="btn"][class*="can"], .btn:has-text("Check In")');
+  if (checkInBtn) {
+    const checkInInfo = await checkInBtn.evaluate((el) => ({
+      text: (el.innerText || el.textContent || "").trim(),
+      disabled: el.disabled || el.classList.contains("disabled"),
+      className: el.className,
+    }));
+    log(`   🔍 Found button: "${checkInInfo.text}" | disabled=${checkInInfo.disabled} | class="${checkInInfo.className}"`, prefix);
+    
+    if (!checkInInfo.disabled && checkInInfo.text.toLowerCase().includes('check')) {
+      try {
+        await safeClickHandle(page, checkInBtn, prefix, "Check In button", account);
+        log("   ✅ Check In button clicked!", prefix);
+        await sleep(1500);
+        await handleClaimResultModal(page, prefix, account);
+        await closeAnyModal(page, account);
+      } catch (e) {
+        log(`   ⚠️ Check In click failed: ${e.message}`, prefix);
+      }
+    }
+  } else {
+    log("   ℹ️ No Check In button found", prefix);
   }
 }
 

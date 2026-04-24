@@ -2,14 +2,14 @@
   "accounts": {
     "1184475469000182": {
       "name": "yuene",
-      "totalRuns": 25,
+      "totalRuns": 28,
       "totalSuccess": 6,
-      "totalFailed": 17,
-      "lastRun": "2026-04-22T03:06:06.147Z",
+      "totalFailed": 19,
+      "lastRun": "2026-04-24T05:38:28.111Z",
       "lastStatus": "failed",
-      "lastError": "[wait login modal] Selector: .modal-container | Waiting for selector `.modal-container` failed",
+      "lastError": "[reload after clear] Selector: https://pay.darkwar-survival.com/#/order | Protocol error (Page.navigate): Session closed. Most likely the page has been closed.",
       "completedAt": "2026-04-21T02:19:24.376Z",
-      "failedAt": "2026-04-22T03:06:32.584Z",
+      "failedAt": "2026-04-24T05:38:36.211Z",
       "lastConnectAt": null,
       "days": {
         "2026-04-14": {
@@ -116,19 +116,28 @@
           "failedAt": "2026-04-22T03:06:32.584Z",
           "error": "[wait login modal] Selector: .modal-container | Waiting for selector `.modal-container` failed",
           "connectAt": null
+        },
+        "2026-04-24": {
+          "tasks": [],
+          "status": "failed",
+          "startedAt": "2026-04-24T05:38:28.111Z",
+          "completedAt": null,
+          "failedAt": "2026-04-24T05:38:36.211Z",
+          "error": "[reload after clear] Selector: https://pay.darkwar-survival.com/#/order | Protocol error (Page.navigate): Session closed. Most likely the page has been closed.",
+          "connectAt": null
         }
       }
     },
     "1438207342000185": {
       "name": "Hạnhbe",
-      "totalRuns": 28,
+      "totalRuns": 29,
       "totalSuccess": 5,
-      "totalFailed": 21,
-      "lastRun": "2026-04-22T03:06:36.308Z",
-      "lastStatus": "running",
-      "lastError": null,
+      "totalFailed": 22,
+      "lastRun": "2026-04-24T05:37:46.498Z",
+      "lastStatus": "failed",
+      "lastError": "Connection closed.",
       "completedAt": "2026-04-20T02:26:11.231Z",
-      "failedAt": "2026-04-22T02:52:14.068Z",
+      "failedAt": "2026-04-24T05:38:39.225Z",
       "lastConnectAt": null,
       "days": {
         "2026-04-14": {
@@ -230,6 +239,15 @@
           "failedAt": "2026-04-22T02:52:14.068Z",
           "error": null,
           "connectAt": null
+        },
+        "2026-04-24": {
+          "tasks": [],
+          "status": "failed",
+          "startedAt": "2026-04-24T05:37:46.498Z",
+          "completedAt": null,
+          "failedAt": "2026-04-24T05:38:39.225Z",
+          "error": "Connection closed.",
+          "connectAt": null
         }
       }
     },
@@ -237,12 +255,12 @@
       "name": "Chung 192",
       "totalRuns": 23,
       "totalSuccess": 5,
-      "totalFailed": 14,
+      "totalFailed": 15,
       "lastRun": "2026-04-22T02:52:18.063Z",
       "lastStatus": "failed",
-      "lastError": "[safeClick:.userIcon] Selector: .userIcon | [waitForSelector:.userIcon] Selector: .userIcon | Waiting for selector `.userIcon` failed",
+      "lastError": "Connection closed.",
       "completedAt": "2026-04-20T02:28:21.927Z",
-      "failedAt": "2026-04-22T02:52:34.621Z",
+      "failedAt": "2026-04-24T05:38:42.233Z",
       "lastConnectAt": null,
       "days": {
         "2026-04-14": {
@@ -343,6 +361,13 @@
           "failedAt": "2026-04-22T02:52:34.621Z",
           "error": "[safeClick:.userIcon] Selector: .userIcon | [waitForSelector:.userIcon] Selector: .userIcon | Waiting for selector `.userIcon` failed",
           "connectAt": null
+        },
+        "2026-04-24": {
+          "tasks": [],
+          "status": "failed",
+          "completedAt": null,
+          "failedAt": "2026-04-24T05:38:42.233Z",
+          "error": "Connection closed."
         }
       }
     },
